@@ -5,10 +5,9 @@ function generateRandomData(num = 100) {
       const reading = 300 + Math.random() * 200;
       const math = 300 + Math.random() * 200;
       const science = 300 + Math.random() * 200;
-      const mainSalary = 30 + Math.random() * 70;
-      const extraSalary = Math.random() * 30;
+      const mainSalary = 1000*(30 + Math.random() * 70);
+      const extraSalary = 1000*(Math.random() * 30);
       const totalSalary = mainSalary + extraSalary;
-      const logSalary = totalSalary > 0 ? Math.log(totalSalary) : 0;
       arr.push({
         idstud: i,
         gender: gender,
@@ -16,7 +15,6 @@ function generateRandomData(num = 100) {
         math: math,
         science: science,
         totalSalary: totalSalary,
-        logSalary: logSalary
       });
     }
     return arr;
@@ -64,7 +62,6 @@ function generateRandomData(num = 100) {
       const mainSalary = parseFloat(d.nQ129_numbers) || 0;
       const extraSalary = parseFloat(d.nQ130_numbers) || 0;
       const totalSalary = mainSalary + extraSalary;
-      const logSalary = totalSalary > 0 ? Math.log(totalSalary) : 0;
       const reading = mean([
         d.PV1READ, d.PV2READ, d.PV3READ, d.PV4READ, d.PV5READ
       ]);
@@ -82,7 +79,6 @@ function generateRandomData(num = 100) {
         math: math,
         science: science,
         totalSalary: totalSalary,
-        logSalary: logSalary
       });
     });
     return result;
@@ -159,7 +155,7 @@ function generateRandomData(num = 100) {
       return { ...d, xVal };
     });
     const xExtent = d3.extent(dataWithX, d => d.xVal);
-    const yExtent = d3.extent(dataWithX, d => d.logSalary);
+    const yExtent = d3.extent(dataWithX, d => d.totalSalary);
     if (!dataWithX.length) {
       xScale.domain([0, 1]);
       yScale.domain([0, 1]);
@@ -178,7 +174,7 @@ function generateRandomData(num = 100) {
       .append("circle")
       .attr("r", 0)
       .attr("cx", d => xScale(d.xVal))
-      .attr("cy", d => yScale(d.logSalary))
+      .attr("cy", d => yScale(d.totalSalary))
       .attr("fill", d => d.gender === 'M' ? "#00B7EB" : "pink")
       .on("mouseover", (event, d) => {
         const selectedDisciplines = getSelectedDisciplines();
@@ -187,8 +183,7 @@ function generateRandomData(num = 100) {
           .style("opacity", 1)
           .html(`
             <div><strong>Дисциплины:</strong> ${disciplineNames}</div>
-            <div><strong>X (баллы):</strong> ${d3.format(".2f")(d.xVal)}</div>
-            <div><strong>Y (log ЗП):</strong> ${d3.format(".2f")(d.logSalary)}</div>
+            <div><strong>Баллы:</strong> ${d3.format(".2f")(d.xVal)}</div>
             <div><strong>Суммарная ЗП (тыс. руб.):</strong> ${d3.format(".2f")(d.totalSalary)}</div>
           `)
           .style("left", (event.pageX + 10) + "px")
@@ -207,7 +202,7 @@ function generateRandomData(num = 100) {
       .duration(1000)
       .ease(d3.easeBounce)
       .attr("cx", d => xScale(d.xVal))
-      .attr("cy", d => yScale(d.logSalary))
+      .attr("cy", d => yScale(d.totalSalary))
       .attr("r", 5);
     const xAxis = d3.axisBottom(xScale).ticks(6);
     const yAxis = d3.axisLeft(yScale).ticks(6);
@@ -220,7 +215,7 @@ function generateRandomData(num = 100) {
       .duration(1000)
       .call(yAxis);
     if (dataWithX.length > 1) {
-      const { slope, intercept } = calcLinearRegression(dataWithX, d => d.xVal, d => d.logSalary);
+      const { slope, intercept } = calcLinearRegression(dataWithX, d => d.xVal, d => d.totalSalary);
       const xMin = xExtent[0];
       const xMax = xExtent[1];
       const yMin = intercept + slope * xMin;
