@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scatter Plot</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h2>Связь баллов PISA с логарифмом зарплаты</h2>
+<div class="container">
+  <div id="chart-container">
+    <div id="chart"></div>
+    <div class="filters">
+      <div>
+        <strong>Пол:</strong>
+        <label><input type="checkbox" value="M" checked>Мужчины</label>
+        <label><input type="checkbox" value="F" checked>Женщины</label>
+      </div>
+      <div>
+        <strong>Дисциплины PISA:</strong>
+        <label><input type="checkbox" value="READING" checked>Чтение</label>
+        <label><input type="checkbox" value="MATH" checked>Математика</label>
+        <label><input type="checkbox" value="SCIENCE" checked>Естествознание</label>
+      </div>
+    </div>
+  </div>
+  <div id="data-toggle">Переключиться на данные из БД</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

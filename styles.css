@@ -1,0 +1,73 @@
+body {
+	font-family: Arial, sans-serif;
+  }
+  
+  .container {
+	display: flex;
+	align-items: flex-start;
+  }
+  
+  #chart-container {
+	flex: 1;
+  }
+  
+  #chart {
+	border: 1px solid #ddd;
+	display: inline-block;
+	margin-bottom: 10px;
+  }
+  
+  #data-toggle {
+	cursor: pointer;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+	border-radius: 4px;
+	margin-left: 10px;
+  }
+  
+  #data-toggle:hover {
+	background-color: #ddd;
+  }
+  
+  @font-face {
+	font-family: 'HseSans';
+	src: url('HSE_Fonts/HSESans-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+  * {
+	box-sizing: border-box;
+	font-family: 'HseSans';
+  }
+  
+  .tooltip {
+	position: absolute;
+	pointer-events: none;
+	background-color: #f4f4f4;
+	border: 1px solid #ccc;
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 4px;
+	opacity: 0;
+  }
+  
+  .filters {
+	margin-top: 10px;
+  }
+  
+  .filters div {
+	margin-bottom: 5px;
+  }
+  
+  .filters label {
+	margin-right: 15px;
+  }
+  
+  .trend-line {
+	stroke: green;
+	stroke-width: 2px;
+	fill: none;
+  }
+  
