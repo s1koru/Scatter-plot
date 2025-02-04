@@ -141,7 +141,7 @@ function updateChart() {
     Object.entries(exam.data).forEach(([gender, points]) => {
       if (selectedGenders.includes(gender)) {
       points.forEach((point, i) => {
-        if (point.expSalary > 400) return; // Добавленная проверка
+        if ((point.expSalary > 400)) return; 
             dataPoints.push({
     id: `${exam.name}_${gender}_${i}`,
     examName: exam.name,
@@ -183,7 +183,7 @@ function updateChart() {
     .merge(circles)
     .transition()
     .duration(1000)
-    .attr("r", 2)
+    .attr("r", 1.5)
     .attr("cx", d => xScale(d.score))
     .attr("cy", d => yScale(d.expSalary));
 
