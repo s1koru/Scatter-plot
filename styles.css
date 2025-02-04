@@ -30,18 +30,6 @@ body {
 	background-color: #ddd;
   }
   
-  @font-face {
-	font-family: 'HseSans';
-	src: url('HSE_Fonts/HSESans-Regular.otf');
-	font-weight: normal;
-	font-style: normal;
-  }
-  
-  * {
-	box-sizing: border-box;
-	font-family: 'HseSans';
-  }
-  
   .tooltip {
 	position: absolute;
 	pointer-events: none;
@@ -70,4 +58,6 @@ body {
 	stroke-width: 2px;
 	fill: none;
   }
-  
+  .discipline-container {
+	display: none;
+  }  
