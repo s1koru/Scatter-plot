@@ -7,26 +7,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h2>Связь баллов PISA с зарплатой</h2>
-<div class="container">
-  <div id="chart-container">
-    <div id="chart"></div>
-    <div class="filters">
-      <div>
-        <strong>Пол:</strong>
-        <label><input type="checkbox" value="M" checked>Мужчины</label>
-        <label><input type="checkbox" value="F" checked>Женщины</label>
-      </div>
-      <div>
-        <strong>Дисциплины PISA:</strong>
-        <label><input type="checkbox" value="READING" checked>Чтение</label>
-        <label><input type="checkbox" value="MATH" checked>Математика</label>
-        <label><input type="checkbox" value="SCIENCE" checked>Естествознание</label>
-      </div>
-    </div>
+<h2>Связь баллов за экзамены ЕГЭ, TIMSS и PISA с зарплатой</h2>
+<div id="chart"></div>
+<div class="filters">
+  <div>
+    <strong>Пол:</strong>
+    <label><input type="checkbox" class="gender" value="Male" checked> Мужчины</label>
+    <label><input type="checkbox" class="gender" value="Female" checked> Женщины</label>
   </div>
-  <div id="data-toggle">Переключиться на данные из БД</div>
-</div>
+  
+  <div>
+    <strong>Система оценки:</strong>
+    <label><input type="radio" name="exam-system" class="exam-system" value="ЕГЭ" checked> ЕГЭ</label>
+    <label><input type="radio" name="exam-system" class="exam-system" value="TIMSS"> TIMSS</label>
+    <label><input type="radio" name="exam-system" class="exam-system" value="PISA"> PISA</label>
+  </div>
+  
+  <div class="discipline-container" id="ege-disciplines">
+    <strong>Дисциплины ЕГЭ:</strong>
+    <label><input type="checkbox" class="discipline" value="Математика" checked> Математика</label>
+    <label><input type="checkbox" class="discipline" value="Русский язык" checked> Русский язык</label>
+  </div>
+  
+  <div class="discipline-container" id="timss-disciplines" style="display: none;">
+    <strong>Дисциплины TIMSS:</strong>
+    <label><input type="checkbox" class="discipline" value="Математика" checked> Математика</label>
+    <label><input type="checkbox" class="discipline" value="Естественные науки" checked> Естественные науки</label>
+  </div>
+  
+  <div class="discipline-container" id="pisa-disciplines" style="display: none;">
+    <strong>Дисциплины PISA:</strong>
+    <label><input type="checkbox" class="discipline" value="Чтение" checked> Чтение</label>
+    <label><input type="checkbox" class="discipline" value="Математика" checked> Математика</label>
+    <label><input type="checkbox" class="discipline" value="Естественные науки" checked> Естествознание</label>
+  </div>
+</div>  
 <script src="script.js"></script>
 </body>
 </html>
