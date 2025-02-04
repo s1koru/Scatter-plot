@@ -141,7 +141,7 @@ function updateChart() {
     Object.entries(exam.data).forEach(([gender, points]) => {
       if (selectedGenders.includes(gender)) {
       points.forEach((point, i) => {
-        if (point.expSalary > 600000) return; // Добавленная проверка
+        if (point.expSalary > 400000) return; // Добавленная проверка
             dataPoints.push({
     id: `${exam.name}_${gender}_${i}`,
     examName: exam.name,
