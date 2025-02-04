@@ -1,5 +1,21 @@
-body {
-	font-family: "Open Sans", Arial, sans-serif;
+@font-face {
+	font-family: 'HSE Sans';
+	font-weight: 400;
+	font-style: normal;
+	src: url('./hse_fonts/HSE-Sans-Regular.woff2') format('woff2'),
+		 url('./hse_fonts/HSE-Sans-Regular.woff') format('woff');
+  }
+  
+  @font-face {
+	font-family: 'HSE Sans';
+	font-weight: 700;
+	font-style: normal;
+	src: url('./hse_fonts/HSE-Sans-Bold.woff2') format('woff2'),
+		 url('./hse_fonts/HSE-Sans-Bold.woff') format('woff');
+  }
+  
+  body {
+	font-family: "HSE Sans", Arial, sans-serif;
 	background-color: #fff; 
 	color: #333;           
 	margin: 0;
