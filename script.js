@@ -51,7 +51,7 @@ d3.json("scatter_plot.json")
           const [score, salary] = point;
           return { 
             score: score, 
-            expSalary: Math.pow(Math.E, salary) 
+            expSalary: Math.pow(Math.E, salary) / 1000
           };
         });
       });
