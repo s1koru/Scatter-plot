@@ -51,7 +51,7 @@ d3.json("scatter_plot.json")
           const [score, salary] = point;
           return { 
             score: score, 
-            expSalary: salary 
+            expSalary: Math.pow(Math.E, parsefloat(salary)) 
           };
         });
       });
@@ -182,7 +182,7 @@ function updateChart() {
     .merge(circles)
     .transition()
     .duration(1000)
-    .attr("r", 1)
+    .attr("r", 2)
     .attr("cx", d => xScale(d.score))
     .attr("cy", d => yScale(d.expSalary));
 
