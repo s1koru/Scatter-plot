@@ -182,7 +182,7 @@ function updateChart() {
     .merge(circles)
     .transition()
     .duration(1000)
-    .attr("r", 3)
+    .attr("r", 1)
     .attr("cx", d => xScale(d.score))
     .attr("cy", d => yScale(d.expSalary));
 
