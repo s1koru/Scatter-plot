@@ -1,4 +1,4 @@
-const width = 600;
+const width = 640;
 const height = 400;
 const margin = { top: 20, right: 20, bottom: 40, left: 50 };
 
@@ -176,7 +176,7 @@ function updateChart() {
     .attr("r", 0)
     .attr("cx", d => xScale(d.score))
     .attr("cy", d => yScale(d.expSalary))
-    .attr("fill", d => d.gender === "Male" ? "#00B7EB" : "#FF69B4")
+    .attr("fill", d => d.gender === "Male" ? "#4B9CD3" : "#F7A4B2")
     .on("mouseover", showTooltip)
     .on("mousemove", moveTooltip)
     .on("mouseout", hideTooltip)
