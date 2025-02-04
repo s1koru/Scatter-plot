@@ -141,7 +141,7 @@ function updateChart() {
     Object.entries(exam.data).forEach(([gender, points]) => {
       if (selectedGenders.includes(gender)) {
       points.forEach((point, i) => {
-        if (point.expSalary > 400000) return; // Добавленная проверка
+        if (point.expSalary > 400) return; // Добавленная проверка
             dataPoints.push({
     id: `${exam.name}_${gender}_${i}`,
     examName: exam.name,
@@ -237,4 +237,18 @@ function updateTrendLine(dataPoints) {
     trendLine.transition().duration(500).style("opacity", 0);
   }
 }
+chartArea.append("text")
+  .attr("class", "x-axis-label")
+  .attr("text-anchor", "middle")
+  .attr("x", (width - margin.left - margin.right) / 2)
+  .attr("y", height - margin.top - margin.bottom + 35)
+  .text("Баллы");
 
+chartArea.append("text")
+  .attr("class", "y-axis-label")
+  .attr("text-anchor", "middle")  
+  .attr("transform", `
+    translate(${-margin.left + 15}, ${(height - margin.top - margin.bottom) / 2})
+    rotate(-90)
+  `)
+  .text("Зарплата (тыс. руб.)");
