@@ -140,15 +140,16 @@ function updateChart() {
   filteredExams.forEach(exam => {
     Object.entries(exam.data).forEach(([gender, points]) => {
       if (selectedGenders.includes(gender)) {
-        points.forEach((point, i) => {
-          dataPoints.push({
-            id: `${exam.name}_${gender}_${i}`,
-            examName: exam.name,
-            gender,
-            score: point.score,
-            expSalary: point.expSalary 
-          });
-        });
+      points.forEach((point, i) => {
+        if (point.expSalary > 600000) return; // Добавленная проверка
+            dataPoints.push({
+    id: `${exam.name}_${gender}_${i}`,
+    examName: exam.name,
+    gender,
+    score: point.score,
+    expSalary: point.expSalary 
+  });
+});
       }
     });
   });
