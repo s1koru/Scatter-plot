@@ -1,26 +1,59 @@
+/* Regular (400) */
 @font-face {
-	font-family: 'HSE Sans';
-	font-weight: 400;
-	font-style: normal;
-	src: url('./hse_fonts/HSE-Sans-Regular.woff2') format('woff2'),
-		 url('./hse_fonts/HSE-Sans-Regular.woff') format('woff');
-  }
-  
-  @font-face {
-	font-family: 'HSE Sans';
-	font-weight: 700;
-	font-style: normal;
-	src: url('./hse_fonts/HSE-Sans-Bold.woff2') format('woff2'),
-		 url('./hse_fonts/HSE-Sans-Bold.woff') format('woff');
-  }
-  
-  body {
-	font-family: "HSE Sans", Arial, sans-serif;
-	background-color: #fff; 
-	color: #333;           
-	margin: 0;
-	padding: 0;
-  }
+  font-family: 'HSE Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./HSE_Fonts/HSESans-Regular.otf') format('opentype');
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'HSE Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./HSE_Fonts/HSESans-Bold.otf') format('opentype');
+}
+
+/* Italic (если нужен курсивный стиль, обычно 400) */
+@font-face {
+  font-family: 'HSE Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('./HSE_Fonts/HSESans-Italic.otf') format('opentype');
+}
+
+/* Thin (чаще всего 100 или 200) */
+@font-face {
+  font-family: 'HSE Sans';
+  font-weight: 100;
+  font-style: normal;
+  src: url('./HSE_Fonts/HSESans-Thin.otf') format('opentype');
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: 'HSE Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./HSE_Fonts/HSESans-SemiBold.otf') format('opentype');
+}
+
+/* Black (900) */
+@font-face {
+  font-family: 'HSE Sans';
+  font-weight: 900;
+  font-style: normal;
+  src: url('./HSE_Fonts/HSESans-Black.otf') format('opentype');
+}
+
+/* Пример базовых стилей */
+body {
+  font-family: 'HSE Sans', Arial, sans-serif;
+  background-color: #fff; 
+  color: #333;           
+  margin: 0;
+  padding: 0;
+}
   
   .container {
 	display: flex;
